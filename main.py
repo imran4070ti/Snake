@@ -1,8 +1,8 @@
 from turtle import Screen
 import time
-from snake import Snake
-from food import Food
-from scoreboard import ScoreBoard
+from utils.snake import Snake
+from utils.food import Food
+from utils.scoreboard import ScoreBoard
 import math
 
 
