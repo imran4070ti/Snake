@@ -69,6 +69,13 @@ class Snake:
 
     def head(self):
         return self.segments[0]
+    
+    def restart_game(self):
+        for segment in self.segments:
+            segment.goto(1000, 1000)
+        self.segments = []
+        self.create_snake()
+
 
     
 

@@ -42,21 +42,15 @@ while game_is_on:
         snake.add_segment()
         scoreboard.update_score()
         scoreboard.refresh_scoreboard()
-    
+
+    # If snake hit the boundary
     if snake_x > 280 or snake_x < -280 or snake_y > 280 or snake_y <-280 :
-        game_is_on = False
-        scoreboard.game_over()
+        scoreboard.reset_score()
+        snake.restart_game()
+    # If snake hit itself
     for segment in snake.segments[1:]:
         if snake.head().distance(segment) < 10:
-            print('colided')
-            scoreboard.game_over()
+            scoreboard.reset_score()
+            snake.restart_game()
 
-
-    
-    
-
-    
-
-
-    
 screen.exitonclick()
